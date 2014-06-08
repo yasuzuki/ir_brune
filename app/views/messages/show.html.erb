@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Device:</strong>
+  <%= @message.device_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @message.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @message.description %>
+</p>
+
+<p>
+  <strong>Format:</strong>
+  <%= @message.format %>
+</p>
+
+<p>
+  <strong>Freq:</strong>
+  <%= @message.freq %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @message.data %>
+</p>
+
+<%= link_to 'Edit', edit_message_path(@message) %> |
+<%= link_to 'Back', messages_path %>
