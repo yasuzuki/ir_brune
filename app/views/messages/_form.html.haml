@@ -1,0 +1,35 @@
+= form_for(@message) do |f|
+  - if @message.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@message.errors.count, "error")
+        prohibited this message from being saved:
+      %ul
+        - @message.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :device_id
+    %br/
+    = f.number_field :device_id
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name
+  .field
+    = f.label :description
+    %br/
+    = f.text_field :description
+  .field
+    = f.label :format
+    %br/
+    = f.text_field :format
+  .field
+    = f.label :freq
+    %br/
+    = f.text_field :freq
+  .field
+    = f.label :data
+    %br/
+    = f.text_area :data
+  .actions
+    = f.submit

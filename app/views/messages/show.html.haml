@@ -1,0 +1,22 @@
+%p#notice= notice
+%p
+  %strong Device:
+  = @message.device_id
+%p
+  %strong Name:
+  = @message.name
+%p
+  %strong Description:
+  = @message.description
+%p
+  %strong Format:
+  = @message.format
+%p
+  %strong Freq:
+  = @message.freq
+%p
+  %strong Data:
+  = @message.data
+= link_to 'Edit', edit_message_path(@message)
+|
+\#{link_to 'Back', messages_path}
