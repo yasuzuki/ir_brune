@@ -6,7 +6,6 @@
       %th Description
       %th Format
       %th Freq
-      %th Data
       %th{:colspan => "3"}
   %tbody
     - @device.messages.each do |message|
@@ -15,7 +14,6 @@
         %td= message.description
         %td= message.format
         %td= message.freq
-        %td= message.data
         %td= link_to 'Show', message
         %td= link_to 'Edit', edit_message_path(message)
         %td= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' }
