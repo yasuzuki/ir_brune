@@ -14,7 +14,8 @@ class MessagesController < ApplicationController
 
   # GET /messages/new
   def new
-    @message = Message.new
+    @device = Device.find(params[:device_id])
+    @message = @device.messages.build
   end
 
   # GET /messages/1/edit
@@ -24,7 +25,8 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.json
   def create
-    @message = Message.new(message_params)
+    @device = Device.find(params[:device_id])
+    @message = @device.messages.build(message_params)
 
     respond_to do |format|
       if @message.save
@@ -56,7 +58,7 @@ class MessagesController < ApplicationController
   def destroy
     @message.destroy
     respond_to do |format|
-      format.html { redirect_to messages_url, notice: 'Message was successfully destroyed.' }
+      format.html { redirect_to @message.device, notice: 'Message was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

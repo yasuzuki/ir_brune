@@ -2,7 +2,6 @@
 %table
   %thead
     %tr
-      %th Device
       %th Name
       %th Description
       %th Format
@@ -10,9 +9,8 @@
       %th Data
       %th{:colspan => "3"}
   %tbody
-    - @messages.each do |message|
+    - @device.messages.each do |message|
       %tr
-        %td= message.device_id
         %td= message.name
         %td= message.description
         %td= message.format
@@ -22,4 +20,4 @@
         %td= link_to 'Edit', edit_message_path(message)
         %td= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
-= link_to 'New Message', new_message_path
+= link_to 'New Message', new_device_message_path(@device)

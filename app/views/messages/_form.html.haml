@@ -1,4 +1,4 @@
-= form_for(@message) do |f|
+= form_for([@device, @message]) do |f|
   - if @message.errors.any?
     #error_explanation
       %h2
@@ -7,10 +7,6 @@
       %ul
         - @message.errors.full_messages.each do |message|
           %li= message
-  .field
-    = f.label :device_id
-    %br/
-    = f.number_field :device_id
   .field
     = f.label :name
     %br/
