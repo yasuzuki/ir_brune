@@ -1,22 +1,33 @@
-%p#notice= notice
+- model_class = Message
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
+
 %p
-  %strong Device:
+  %strong= model_class.human_attribute_name(:device_id) + ':'
+  %br
   = @message.device_id
 %p
-  %strong Name:
+  %strong= model_class.human_attribute_name(:name) + ':'
+  %br
   = @message.name
 %p
-  %strong Description:
+  %strong= model_class.human_attribute_name(:description) + ':'
+  %br
   = @message.description
 %p
-  %strong Format:
+  %strong= model_class.human_attribute_name(:format) + ':'
+  %br
   = @message.format
 %p
-  %strong Freq:
+  %strong= model_class.human_attribute_name(:freq) + ':'
+  %br
   = @message.freq
 %p
-  %strong Data:
+  %strong= model_class.human_attribute_name(:data) + ':'
+  %br
   = @message.data
-= link_to 'Edit', edit_message_path(@message)
-|
-\#{link_to 'Back', @message.device}
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), :back, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_message_path(@message), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), message_path(@message), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
