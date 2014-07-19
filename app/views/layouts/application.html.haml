@@ -34,6 +34,10 @@
       .row-fluid
         .span12
           = bootstrap_flash
+          - if notice
+            %p.notice= notice
+          - if alert
+            %p.alert= alert
           = yield
 
       %footer
