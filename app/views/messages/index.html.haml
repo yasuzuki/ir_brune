@@ -17,7 +17,7 @@
         %td= message.format
         %td= message.freq
         %td
-          = link_to 'Send', transmit_message_path(message), :class => 'btn btn-mini'
+          = link_to 'Send', transmit_message_path(message), :class => 'btn btn-success'
           = link_to t('.show', :default => t("helpers.links.show")), message, :class => 'btn btn-mini'
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_message_path(message), :class => 'btn btn-mini'
           = link_to t('.destroy', :default => t("helpers.links.destroy")), message_path(message), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
