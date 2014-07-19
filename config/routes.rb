@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :devices, shallow: true do
     resources :messages do
       member do
