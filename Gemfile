@@ -34,6 +34,11 @@ gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-stack_explorer'
+  gem 'pry-byebug'
+  gem 'better_errors'
 end
 
 # Use ActiveModel has_secure_password
