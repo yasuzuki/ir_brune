@@ -3,7 +3,7 @@ class Message < ActiveRecord::Base
   belongs_to :device
   base_uri 'https://api.getirkit.com'
 
-  def send_data
+  def transmit
     data = { body:
       {
         clientkey: Station.client_key,

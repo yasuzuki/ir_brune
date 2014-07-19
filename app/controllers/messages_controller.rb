@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_action :set_message, only: [:show, :transmit, :edit, :update, :destroy]
 
   # GET /messages
   # GET /messages.json
@@ -10,6 +10,13 @@ class MessagesController < ApplicationController
   # GET /messages/1
   # GET /messages/1.json
   def show
+  end
+
+  # GET /messages/1/transmit
+  # GET /messages/1/transmit.json
+  def transmit
+    @message.transmit
+    redirect_to @message.device
   end
 
   # GET /messages/new

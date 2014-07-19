@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  
+
   resources :devices, shallow: true do
-    resources :messages
+    resources :messages do
+      member do
+        get :transmit
+      end
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
