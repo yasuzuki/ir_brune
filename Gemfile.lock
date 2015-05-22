@@ -224,6 +224,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   coffee-rails (~> 4.0.0)
+  devise
   haml-rails
   httparty
   jbuilder (~> 2.0)
